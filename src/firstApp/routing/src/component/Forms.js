@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
-const url = "https://jsonplaceholder.typicode.com/posts";
+const url = "http://localhost:3001/user"
+
 class forms extends Component
 {
     constructor(props) {
@@ -7,9 +8,9 @@ class forms extends Component
         super();
         this.state =
             {
-                userId : '',
-                title : '',
-                body : ''
+                user : '',
+                ttl : '',
+                bd : ''
             }
         this.changeuserId = this.changeuserId.bind(this);
         this.changetitle = this.changetitle.bind(this);
@@ -18,17 +19,17 @@ class forms extends Component
     }
     changeuserId(event)
     {
-        this.setState({userId:event.target.value})
+        this.setState({user:event.target.value})
     }
 
     changetitle(event)
     {
-        this.setState({title:event.target.value})
+        this.setState({ttl:event.target.value})
     }
 
     changebody(event)
     {
-        this.setState({body:event.target.value})
+        this.setState({bd:event.target.value})
     }
 
     handleSubmit()
@@ -36,18 +37,19 @@ class forms extends Component
         console.log("Submit called ");
         console.log(this.state);
         var data = {
-            userId : this.state.userId,
-            title : this.state.title,
-            body : this.state.body
+            'userId' : this.state.user,
+            'title' : this.state.ttl,
+            'body' : this.state.bd
         }
         fetch(url,{
             method:'POST',
             headers :
-                {
+                {  'Accept': 'application/json' ,
+                    'Content-Type': 'application/json'
                 },
-            body : data
+            body : JSON.stringify(data)
         })
-            .then(response => response.json())
+            //.then(response => response.json())
             .then((jsonData) => {
                 // jsonData is parsed json object received from url
                 console.log(jsonData)
@@ -62,19 +64,19 @@ class forms extends Component
                         <div className="form-group">
                             <label htmlFor="cName">User Name :</label>
                             <input type="text" className="form-control" placeholder="Enter userId" id="cName"
-                            value={this.state.userId} onChange={this.changeuserId}/>
-                            <h1>{this.state.userId}</h1>
+                            value={this.state.user} onChange={this.changeuserId}/>
+                            <h1>{this.state.user}</h1>
                         </div>
                         <div className="form-group">
                             <label htmlFor="cTitle">Title :</label>
                             <input type="text" className="form-control" placeholder="Enter title" id="cTitle"
-                                   value={this.state.title}
+                                   value={this.state.ttl}
                                    onChange={this.changetitle}/>
                         </div>
                         <div className="form-group">
-                        <label htmlFor="cBody">Title :</label>
+                        <label htmlFor="cBody">Body :</label>
                         <input type="text" className="form-control" placeholder="Enter Description" id="cBody"
-                               value={this.state.body}
+                               value={this.state.bd}
                                onChange={this.changebody}/>
                          </div>
                         <button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Search</button>

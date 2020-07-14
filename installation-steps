@@ -2,7 +2,12 @@ download node js latest version https://nodejs.org/en/
 node-v13.10.0-x64.msi run this file 
 
 for JSON sever needed node version >=10
+npm install -g json-server
+
 Use json server for mocking API/creating dummy API
+go to folder where file is created + cmd
+json-server --watch user.json --port 3001
+URL received : http://localhost:3001/user
 
 to create react app package latest version  >> to import new project as well
 npm i -g create-react-app
