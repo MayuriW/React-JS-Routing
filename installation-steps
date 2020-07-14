@@ -4,13 +4,13 @@ node-v13.10.0-x64.msi run this file
 for JSON sever needed node version >=10
 Use json server for mocking API/creating dummy API
 
-to create react app package latest version 
+to create react app package latest version  >> to import new project as well
 npm i -g create-react-app
 
 to create application
 create-react-app appName
 
-install react rounter dom
+install react rounter dom >> to import new project as well
 npm i react-router-dom
 
 use rounter dom
@@ -29,6 +29,37 @@ e.g.
 <div class="container">
     <div id="root"></div>
   </div>
+
+********************************* Form | GET POST API  *********************************
+Post API Sample
+https://jsonplaceholder.typicode.com/posts
+
+e.g. Forms.js
+create Class component
+define URL - API to call
+create constructor + initialize state + initialize event binding
+write method to call on (e.g. onChange event)
+write method to submit (e.g. onclick event) + call URL with data submitted
+
+Get API Sample
+http://apiv3.iucnredlist.org/api/v3/country/list?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee
+
+e.g. Post.js and Postview.js
+create Class component
+define URL - API to call
+create constructor with props + initialize state
+create method -
+componentDidMount() {
+         fetch(url,{method:'GET'})
+        .then((res)=>res.json())
+        .then((data)=>{
+            this.setState({topics:data.results});
+            console.log(data)
+        })
+    }
+
+
+
 
 
 
