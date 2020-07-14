@@ -1,0 +1,36 @@
+download node js latest version https://nodejs.org/en/
+node-v13.10.0-x64.msi run this file 
+
+for JSON sever needed node version >=10
+Use json server for mocking API/creating dummy API
+
+to create react app package latest version 
+npm i -g create-react-app
+
+to create application
+create-react-app appName
+
+install react rounter dom
+npm i react-router-dom
+
+use rounter dom
+import {BrowserRouter,Route,Link} from 'react-router-dom';
+Link - to stop refreshing entire page its same as hyperlink
+
+use Bootstrap in React 
+
+go to index.html and add following  :
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+e.g. 
+<div class="container">
+    <div id="root"></div>
+  </div>
+
+
+
+
+

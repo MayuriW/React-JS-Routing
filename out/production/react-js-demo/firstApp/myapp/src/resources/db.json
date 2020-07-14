@@ -1,0 +1,16 @@
+[
+  {
+    "label": "Single Article",
+    "klassId": "single_article",
+    "type": "ProjectKlass",
+    "cardinality": "Many",
+    "isVisible": true
+  },
+  {
+    "label": "Test Article",
+    "klassId": "Test_article",
+    "type": "ProjectKlass",
+    "cardinality": "Many",
+    "isVisible": true
+  }
+]
